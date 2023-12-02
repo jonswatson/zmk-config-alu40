@@ -17,6 +17,13 @@
             bindings = <&kp LS(A) &kp S &kp K &kp N &kp O &kp T &kp F &kp O &kp R &kp W &kp H &kp O &kp M &kp T &kp H &kp E &kp B &kp E &kp L &kp L &kp T &kp O &kp L &kp L &kp S &kp EXCL &kp ENTER>;
             label = "PW";
         };
+
+        pwl: pwl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(T) &kp H &kp I &kp S &kp I &kp S &kp LS(N) &kp N0 &kp LS(T) &kp S &kp P &kp A &kp R &kp T &kp A &kp EXCL>;
+            label = "PWL";
+        };
     };
 
     combos {
@@ -75,7 +82,7 @@
 &sys_reset       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &trans  &trans  &trans      &trans  &trans  &bt BT_CLR
 &rgb_ug RGB_ON   &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &trans  &trans  &trans      &trans  &trans  &trans
 &rgb_ug RGB_OFF  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &trans  &trans  &trans      &trans  &trans  &trans
-&bootloader      &trans           &trans           &trans           &trans           &trans           &trans  &trans  &bt BT_PRV  &trans  &pw     &bt BT_NXT
+&bootloader      &trans           &trans           &trans           &trans           &trans           &trans  &trans  &bt BT_PRV  &trans  &pw     &pwl
             >;
 
             sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
